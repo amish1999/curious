@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MI Test</title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Quicksand|Pacifico|Play|Cinzel|Courgette|Lato"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica|Open+Sans+Condensed:300|Unica+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Zilla+Slab+Highlight" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Boogaloo|Cabin+Sketch|Open+Sans+Condensed:700|Zilla+Slab+Highlight"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Economica|Open+Sans+Condensed:300|Unica+One"
+        rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="img/hh1.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/04.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="css/04.js"></script>
+    <script async src="https://restpack.io/save-as-pdf.js"></script>
+
+    <script>
+        function myfunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+    </script>
+    <style type="text/css">
+        .center {
+            font-family: 'Futura';
+            font-size: 60px;
+            height: 80px;
+            font-weight: bold;
+            background-color: rgb(247, 130, 130);
+        }
+
+        .person {
+              font-family: 'Futura';  
+            /* font-family: 'Unica One', cursive;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Economica', sans-serif; */
+            font-family: 'Amatic SC', cursive; 
+            font-weight: bold; 
+            color: rgb(238, 236, 234);
+            text-align: center;
+            font-size: 35px;
+        }
+        #all {
+            background-color: rgb(21, 72, 117); 
+            height: 400px; 
+            /* font-family: 'Futura'; */
+             width: 300px; 
+             float: left;
+             padding-top: 60px;
+             padding: 20px;
+             line-height: 1.2;
+        }
+        #des {
+            background-color: #fbfff2;
+            height: 690px;
+            font-size: large;
+            font-family: 'Futura';
+            padding-left: 50px; 
+        }
+        
+    </style>
+</head>
+
+<body style="background-image: url(img/181.jpeg);">
+
+
+    <div class="center">Your MI Test Score</div>
+    <!-- scores -->
+    <!-- <p id="demo"></p> -->
+    <div id="all" class="person"></div>  
+    <!--Graph-->
+    <div class="chart" style="background-color: #f0f5e5; padding-left: 410px;width: 852px; height: 410px; padding-top: 30px;">
+        <h2>Graphical Analysis</h2>
+        
+        <table id="data-table" border="1" cellpadding="1" cellspacing="0">
+            <caption>Personality types</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Linguistic</th>
+                    <th scope="col">Logical</th>
+                    <th scope="col">Musical</th>
+                    <th scope="col">Spatial</th>
+                    <th scope="col">Kinesthetic</th>
+                    <th scope="col">Interpersonal</th>
+                    <th scope="col">Intrapersonal</th>
+                    <th scope="col">Naturalistic</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td id="lingu"></td>
+                    <td id="logi"></td>
+                    <td id="musi"></td>
+                    <td id="spati"></td>
+                    <td id="kine"></td>
+                    <td id="inter"></td>
+                    <td id="intra"></td>
+                    <td id="natur"></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <!-- details -->
+    <div id="des" class="person_data"></div>
+  </br>
+    <script type="text/javascript">
+        var final;
+        var x;
+
+
+        function myFunction() {
+      x = document.getElementById("myEmail").value;
+      document.getElementById("demo").innerHTML = x;
+    }
+
+        final =  "<br>Linguistic : " + sessionStorage.lit +
+                "<br> Logical : " + sessionStorage.lot +
+                "<br> Musical : " + sessionStorage.mut +
+                "<br> Spatial : " + sessionStorage.spt +
+                "<br> Kinesthetic : " + sessionStorage.kit +
+                "<br> Interpersonal : " + sessionStorage.iet +
+                "<br> Intrapersonal : " + sessionStorage.iat +
+                "<br> Naturalistic : " + sessionStorage.nat;
+
+
+                        document.getElementById("all").innerHTML = final;
+
+                        document.getElementById("lingu").innerHTML = sessionStorage.lit;
+						document.getElementById("logi").innerHTML = sessionStorage.lot;
+						document.getElementById("musi").innerHTML = sessionStorage.mut;
+						document.getElementById("spati").innerHTML = sessionStorage.spt;
+                        document.getElementById("kine").innerHTML = sessionStorage.kit;
+						document.getElementById("inter").innerHTML = sessionStorage.iet;
+						document.getElementById("intra").innerHTML = sessionStorage.iat;
+						document.getElementById("natur").innerHTML = sessionStorage.nat;
+
+       // D7D2BE990FC555FE25F5282139623DFF7BCB
+        // info@vayamindia.org
+
+        // My Password : DBB4C8FB69C4F148BD01F4A30F83CD2CEF8B
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "coderatbyte19@gmail.com",
+                Password: "DBB4C8FB69C4F148BD01F4A30F83CD2CEF8B",
+                To: "coderatbyte19@gmail.com",
+                From: "coderatbyte19@gmail.com",
+                Subject: "This is the Result",
+                Body: "This is your Personality Score : <br>" + final
+            }).then(
+                message => alert("Result submitted successfully!")
+            );
+        }
+      
+        res = [
+            { name: 'Linguistic', value: sessionStorage.lit, des: "<br><strong><font style='color: #263e82; font-size: 22px;'>◉ Linguistic</font> </strong><br><br> The people are good at listening, speaking, reading, and writing and possess a good sense of the meaning of words, their rhythm, and sound have strong Linguistic Intelligence. These people are always ahead in traditional classrooms and generally have good oratory skills. <br> <strong>Famous People:</strong> William Shakespear, Shashi Tharoor, JK Rowling, Barack Obama <br><strong> Course:</strong><button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/creative-writing'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Creative Writing</a></button>,<button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/public-speaking'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Public Speaking</a> </button>" },
+            { name: 'Logical', value: sessionStorage.lot, des: "<br><strong><font style='color: #263e82; font-size: 22px;'>◉ Logical</font></strong> <br><br>The people who are good at conceptualizing logical relations among actions or symbols have strong Logical/Mathematical Intelligence. These people display an aptitude for numbers, reasoning, and problem-solving. <br>Famous People: Srinivas Ramanujam, Albert Einstien, Nicola Tesla, Stephen Hawking, Bill Gates<br> <strong>Course:</strong><button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/financial-master'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Financial literacy</a></button>, <button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/chess'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Chess</a></button>,<button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/puzzle-and-riddle'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Puzzle & Riddle</a></button>" },
+            { name: 'Musical', value: sessionStorage.mut, des: "<br><strong> <font style='color: #263e82; font-size: 22px;'>◉ Musical</font></strong><br> <br>The people who are good at understanding musical expressions and display sensitivity towards rhythm, pitch, meter, tone, melody, and timbre have strong Musical Intelligence. These people may entail the ability to sing or play an instrument.  <br><strong>Famous People: </strong>A R Rahman, Michael Jackson, Mozart, Bob Dylan <br>Course:</strong> <button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/singing'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Singing</a></button>,<button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/synthesiser'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'> Synthesizer</a></button> " },
+            { name: 'Spatial', value: sessionStorage.spt, des: "<br><strong> <font style='color: #263e82; font-size: 22px;'>◉ Spatial</font></strong> <br><br>The people who are good at conceptualizing and orchestrating spatial arrays have strong Spatial Intelligence. They are visual learners and organize things spatially. They like to see things in order to understand them. Graphs, maps, illustrations, tables, art, and puzzles are fun for them. <br><strong>Famous People:</strong> Vishwanathan Anand, Galileo Galilei, Leonardo Da Vinci,  Vincent Van Gogh, Steve Jobs<br> <strong>Course: </strong><button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/chess'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Chess</a></button>, <button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/painting'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Painting</a></button>, <button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/puzzle-and-riddle'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Puzzle & Riddle</a></button>,<button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/space-exploration'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'> Space Explorer</a></button> " },
+            { name: 'Kinesthetic', value: sessionStorage.kit, des: "<br><strong> <font style='color: #263e82; font-size: 22px;'>◉ Kinesthetic</font> </strong><br><br>People with strong Kinesthetic Intelligence display a great body balance and can use their whole body or parts of the body in a coordinated movement.  They learn best through physical activities, games, and movements. <br><strong>Famous People: </strong>Virat Kohali, Serena Williams, Michael Jordan, Pina Bausc<br> <strong>Course:</strong> <button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/dancing'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Dance </a></button>" },
+            { name: 'Interpersonal', value: sessionStorage.iet, des: "<br><strong><font style='color: #263e82; font-size: 22px;'>◉ Interpersonal</font></strong><br> <br>Those who are inherently people-oriented and like expressing themselves with others have strong Interpersonal Intelligence. These people are cooperative with others and enjoy learning in groups.  <br><strong>Famous People: </strong>Oprah  Winfrey, Mother Teresa, Shahrukh Khan  <br><strong>Course:</strong><button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/public-speaking'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Public Speaking/ Debating</a></button>, <button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/creative-writing'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Creative writing </a></button>" },
+            { name: 'Intrapersonal', value: sessionStorage.iat, des: "<br><strong><font style='color: #263e82; font-size: 22px;'>◉ Intrapersonal</font> </strong><br><br>Those with higher Intrapersonal Intelligence have higher self-awareness than others. They reflect on their feelings, values, and ideas. They are also quite intuitive. Intrapersonal Intelligence does not indicate any particular profession rather it establishes goals for every individual. <br><strong> Famous People:</strong> M K Gandhi, Aristotle, Hellen Keller, Anne Frank <br><strong> Course:</strong> <button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/creative-writing'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Creative writing</a></button>,<button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/painting'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Painting </a></button>" },
+            { name: 'Naturalistic', value: sessionStorage.nat, des: "<br><strong> <font style='color: #263e82; font-size: 22px;'>◉ Naturalistic </font></strong><br><br>Those who love nature more than anything else and enjoy playing with animals and taking field trips have strong Naturalistic Intelligence. They are good at making the consequential distinction in the world of nature, for example, one plant from another or different patterns in nature. <br><strong>Famous People:</strong> Charles Darwin, David Suzuki <br><strong>Course: </strong><button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'><a href='https://www.demo.curiositypark.com/courses/space-exploration' target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;' style='color: #153082;font-weight: bold;'>Space Exploration</a> </button>" }
+        ];
+
+        function custom_compare(a, b) {
+            return a.value - b.value;
+        }
+      
+
+        res.sort(custom_compare).reverse();
+
+
+
+        document.getElementById("des").innerHTML = "<br><center><strong style='font-size: 24px;'>Your Top-3 Intelligences</strong></center><br>" +res[0].des + "<br><br>" + res[1].des + "<br><br>" + res[2].des + "<br><br>"; 
+
+           
+      // S E N D     E  M A I  L --------------------
+
+         window.onload = sendEmail();
+
+
+       // ---------------------------- 
+
+    </script>
+  <div style="float: left; padding-left: 80px;"><input type="email" id="myEmail" value="Enter your email address" style="height: 35px; border: 2px solid #413ada; padding-left: 10px;" ><button onclick="myFunction()" style="margin-left: 10px; cursor: pointer; border: 2px rgb(211, 160, 160); border-radius: 5px; height: 40px; width: 180px; background-color: #d5f09c;"><h2 style="padding: 8px; ">Send Mail <font style="font-size: 22px; color: chocolate;">➲</font></h2></button>
+  
+  <div style="float: right; padding-left: 400px; padding-right: 80px;"><button style="cursor: pointer; border: 2px rgb(211, 160, 160); border-radius: 5px; height: 40px; width: 180px; background-color: #d5f09c;"><h2 onclick="window.print();" style="padding: 8px; ">Save as Pdf <font style="font-size: 22px; color: chocolate;">➲</font></h2></button></div>
+<br>
+</body>
+
+</html>

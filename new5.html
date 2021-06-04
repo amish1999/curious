@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Abel|Quicksand|Pacifico|Play|Cinzel|Courgette|Lato" rel="stylesheet">
+  <title>MI Test</title>
+  <link rel="shortcut icon" type="image/png" href="img/hh1.png">
+  <script>
+  function myfunction()
+  {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+  </script>
+<style type="text/css">
+.qz {
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+    
+    font-size: 28px;
+}
+.header{
+	/*background-color: rgba(244, 249, 250, 0.938);*/
+
+	height: 70px;
+	padding-left: 20px;
+	padding-top:20px;
+	color: rgb(68, 68, 88);
+	font-family: 'Quicksand';
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: lowercase;
+
+}
+font:hover{
+	color:rgb(33, 33, 39);
+	animation:w3-effect 4s 1;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/styleIndex.css">
+</head>
+
+  <body style="background-image: url(img/111.jpg);">
+    <div id="qz" style="font-size: 18px; color: #413ada; padding-left: 10px; font-weight: bold;"> 
+  <form name="quiz">
+<div style="height: 75px"></div>
+<div style="padding: 1%;">
+41. Before solving a problem, I like to divide it in its logical steps.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q1" value="in" id="q1lot">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q1" value="ex" id="q1lof">No<br>
+</div>
+<div style="padding: 1%;">
+42. I think I have good balance and coordination.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q2" value="in" id="q2kit">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q2" value="ex" id="q2kif">No<br>
+</div>
+<div style="padding: 1%;">
+43. I enjoy musicals more than plays.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q3" value="in" id="q3mut">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q3" value="ex" id="q3muf">No<br>
+</div>
+<div style="padding: 1%;">
+44. I don't like being alone.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q4" value="in" id="q4iet">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q4" value="ex" id="q4ief">No<br>
+</div>
+<div style="padding: 1%;">
+45. I enjoy Art classes.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q5" value="in" id="q5spt">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q5" value="ex" id="q5spf">No<br>
+</div>
+<div style="/*background-image: url(img/181.jpeg)*/;padding: 1%;">
+46. When I grow up, I think I would like to work in nature or animal-related fields.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q6" value="in" id="q6nat">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q6" value="ex" id="q6naf">No<br>
+</div>
+<div style="/*background-image: url(img/181.jpeg)*/;padding: 1%;">
+47. I would rather play a sport than reading or study.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q7" value="in" id="q7kit">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q7" value="ex" id="q7kif">No<br>
+</div>
+<div style="/*background-image: url(img/181.jpeg)*/;padding: 1%;">
+48. I like playing with my pet. or I wish I had a pet.<br>
+Yes<input style="margin-left: 10px;margin-top: 1%;" type="radio" name="q8" value="in" id="q8nat">
+<input style="margin-left: 5%;margin-top: 1%;" type="radio" name="q8" value="ex" id="q8naf">No<br>
+</div>
+</form>
+</div>
+
+<p style="padding: 0px;"><center><button onclick="validate()" style="color: rgb(65, 17, 17); border-radius: 15px; background-color: rgb(85, 193, 255); height: 40px; width: 200px; font-weight: bold; font-size: 20px;">Submit </button></center></p>
+<br><br>
+
+<script>
+   function op(){ window.open("final.html","_self");}
+function myFunction() {
+if (document.getElementById('q1lot').checked) {
+    sessionStorage.lot++;
+   }
+if (document.getElementById('q1lof').checked) {
+    sessionStorage.lof++;
+   }
+if (document.getElementById('q2kit').checked) {
+    sessionStorage.kit++;
+   }
+if (document.getElementById('q2kif').checked) {
+    sessionStorage.kif++;
+   }
+if (document.getElementById('q3mut').checked) {
+    sessionStorage.mut++;
+   }
+if (document.getElementById('q3muf').checked) {
+    sessionStorage.muf++;
+   }
+if (document.getElementById('q4iet').checked) {
+    sessionStorage.iet++;
+   }
+if (document.getElementById('q4ief').checked) {
+    sessionStorage.ief++;
+   }
+if (document.getElementById('q5spt').checked) {
+    sessionStorage.spt++;
+   }
+if (document.getElementById('q5spf').checked) {
+    sessionStorage.spf++;
+   }
+if (document.getElementById('q6nat').checked) {
+    sessionStorage.nat++;
+   }
+if (document.getElementById('q6naf').checked) {
+    sessionStorage.naf++;
+   }
+if (document.getElementById('q7kit').checked) {
+    sessionStorage.kit++;
+   }
+if (document.getElementById('q7kif').checked) {
+    sessionStorage.kif++;
+   }
+if (document.getElementById('q8nat').checked) {
+    sessionStorage.nat++;
+   }
+if (document.getElementById('q8naf').checked) {
+    sessionStorage.naf++;
+   }
+}
+   function validate(){
+if (!(document.getElementById('q1lot').checked)&&!(document.getElementById('q1lof').checked))
+{
+    alert("Please select an answer for the question 41!!!");
+    return false;
+}
+else if (!(document.getElementById('q2kit').checked)&&!(document.getElementById('q2kif').checked))
+{
+    alert("Please select an answer for the question 42!!!");
+    return false;
+}
+else if (!(document.getElementById('q3mut').checked)&&!(document.getElementById('q3muf').checked))
+{
+    alert("Please select an answer for the question 43!!!");
+    return false;
+}
+else if (!(document.getElementById('q4iet').checked)&&!(document.getElementById('q4ief').checked))
+{
+    alert("Please select an answer for the question 44!!!");
+    return false;
+}
+else if (!(document.getElementById('q5spt').checked)&&!(document.getElementById('q5spf').checked))
+{
+    alert("Please select an answer for the question 45!!!");
+    return false;
+}
+else if (!(document.getElementById('q6nat').checked)&&!(document.getElementById('q6naf').checked))
+{
+    alert("Please select an answer for the question 46!!!");
+    return false;
+}
+else if (!(document.getElementById('q7kit').checked)&&!(document.getElementById('q7kif').checked))
+{
+    alert("Please select an answer for the question 47!!!");
+    return false;
+}
+else if (!(document.getElementById('q8nat').checked)&&!(document.getElementById('q8naf').checked))
+{
+    alert("Please select an answer for the question 48!!!");
+    return false;
+}
+myFunction();
+op();
+}
+
+</script>
+
+</body>
+</html>
