@@ -257,14 +257,22 @@ input{
 				<p>Answer all the questions in each section.</p> -->
 			
 			<br>
-			<br>
 			<strong><font style="color: #413ada;  font-family: 'Futura';">Just be yourself !</font></strong>
 			
 	    </div>
+		<br><br><br><br>
+		<input type="name" id="myName" placeholder="Enter your name" style="height: 35px; border: 2px solid #413ada; padding-left: 10px;">
+		<!-- <center><div class="dropbtn12" style="font-size: 18px;  font-family: 'Futura';border-radius: 15px; padding-top: 100px; height: 50px; width: 200px;"><a href="new.html" style="text-decoration:none;margin:0px; background-color: #d0fd7b; border: 10px; height: 50px; width: 100px; padding: 20px;" ><b>Take the Test</b></a></div></center> -->
 		<br><br>
-
-		<center><div class="dropbtn12" style="font-size: 18px;  font-family: 'Futura';border-radius: 15px; padding-top: 100px; height: 50px; width: 200px;"><a href="new.html" style="text-decoration:none;margin:0px; background-color: #d0fd7b; border: 10px; height: 50px; width: 100px; padding: 20px;" ><b>Take the Test</b></a></div></center>
-
+		<p style="padding: 0px;"><center><button onclick="myFunction(); op();" style="color: #fff; border-radius: 15px; background-color: rgb(107, 158, 235); height: 40px; width: 200px; font-weight: bold; font-size: 20px;">Take the Test </button></center></p>
 	</div>
+	<script>
+		sessionStorage.name;
+ 		function op(){ window.open("new.html","_self");}
+      function myFunction(){
+         sessionStorage.name = document.getElementById("myName").value;
+      }
+	  
+	</script>
 	</body>
 </html>
