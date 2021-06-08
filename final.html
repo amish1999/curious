@@ -3,6 +3,7 @@
 
 <head>
     <title>MI Test</title>
+    
     <link href="https://fonts.googleapis.com/css?family=Abel|Quicksand|Pacifico|Play|Cinzel|Courgette|Lato"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -29,10 +30,12 @@
 
     </script>
     <style type="text/css">
+       
         .center {
             font-family: 'Futura';
             font-size: 60px;
             height: 80px;
+            width: 100%;
             font-weight: bold;
             background-color: rgb(247, 130, 130);
         }
@@ -44,42 +47,46 @@
             font-family: 'Economica', sans-serif; */
             font-family: 'Amatic SC', cursive; 
             font-weight: bold; 
+            width: 100%;
             color: rgb(238, 236, 234);
             text-align: center;
-            font-size: 35px;
+            
+            
         }
         #all {
             background-color: rgb(21, 72, 117); 
-            height: 400px; 
+            height: 380px; 
             /* font-family: 'Futura'; */
-             width: 300px; 
-             float: left;
+              
+             font-size: 28px;
+           
              padding-top: 60px;
-             padding: 20px;
+             
              line-height: 1.2;
         }
         #des {
             background-color: #fbfff2;
-            height: 690px;
+            height: max-content;
+            
             font-size: large;
             font-family: 'Futura';
             padding-left: 50px; 
         }
-        
+     
     </style>
 </head>
 
-<body style="background-image: url(img/181.jpeg);">
+<body style="background-color: #f0f5e5;">
 
 
     <div class="center">Your MI Test Score</div>
     <!-- scores -->
-    <!-- <p id="demo"></p> -->
+   
     <div id="all" class="person"></div>  
     <!--Graph-->
-    <div class="chart" style="background-color: #f0f5e5; padding-left: 410px;width: 852px; height: 410px; padding-top: 30px;">
-        <h2>Graphical Analysis</h2>
-        
+    <div class="chart" style="background-color: #f0f5e5; width: 100%; height: 410px; padding-top: 30px;">
+        <h2 style="font-weight: bold;">Graphical Analysis</h2>
+    
         <table id="data-table" border="1" cellpadding="1" cellspacing="0">
             <caption>Personality types</caption>
             <thead>
@@ -109,31 +116,28 @@
 
             </tbody>
         </table>
-
+      
     </div>
 
-
+   
     <!-- details -->
     <div id="des" class="person_data"></div>
-  </br>
+  <!-- <div style="float: left; padding-left: 80px;"><input type="email" id="myEmail" placeholder="Enter your email address" style="height: 35px; border: 2px solid #413ada; padding-left: 10px;" ><button onclick="myFunction(); sendEmail();" style="margin-left: 10px; cursor: pointer; border: 2px rgb(211, 160, 160); border-radius: 5px; height: 40px; width: 180px; background-color: #d5f09c;"><h2 style="padding: 8px; ">Send Mail <font style="font-size: 22px; color: chocolate;">➲</font></h2></button> -->
+    <!-- <p id="demo" style="font-size: large;"></p> -->
+   <br> 
+<center><button style="cursor: pointer; border: 2px rgb(211, 160, 160); border-radius: 5px; height: 40px; width: 180px; background-color: #d5f09c;"><h2 onclick="window.print();" style="padding: 8px; ">Save as Pdf <font style="font-size: 22px; color: chocolate;">➲</font></h2></button></center>
+<br>
     <script type="text/javascript">
         var final;
-        var x;
-
-
-        function myFunction() {
-      x = document.getElementById("myEmail").value;
-      document.getElementById("demo").innerHTML = x;
-    }
-
-        final =  "<br>Linguistic : " + sessionStorage.lit +
+        var n = sessionStorage.name;
+        final =  "Linguistic : " + sessionStorage.lit +
                 "<br> Logical : " + sessionStorage.lot +
                 "<br> Musical : " + sessionStorage.mut +
                 "<br> Spatial : " + sessionStorage.spt +
                 "<br> Kinesthetic : " + sessionStorage.kit +
                 "<br> Interpersonal : " + sessionStorage.iet +
                 "<br> Intrapersonal : " + sessionStorage.iat +
-                "<br> Naturalistic : " + sessionStorage.nat;
+                "<br> Naturalistic : " + sessionStorage.nat + "<br>";
 
 
                         document.getElementById("all").innerHTML = final;
@@ -147,23 +151,23 @@
 						document.getElementById("intra").innerHTML = sessionStorage.iat;
 						document.getElementById("natur").innerHTML = sessionStorage.nat;
 
-       // D7D2BE990FC555FE25F5282139623DFF7BCB
+        // D7D2BE990FC555FE25F5282139623DFF7BCB
         // info@vayamindia.org
 
         // My Password : DBB4C8FB69C4F148BD01F4A30F83CD2CEF8B
-        function sendEmail() {
-            Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "coderatbyte19@gmail.com",
-                Password: "DBB4C8FB69C4F148BD01F4A30F83CD2CEF8B",
-                To: "coderatbyte19@gmail.com",
-                From: "coderatbyte19@gmail.com",
-                Subject: "This is the Result",
-                Body: "This is your Personality Score : <br>" + final
-            }).then(
-                message => alert("Result submitted successfully!")
-            );
-        }
+        // function sendEmail() {
+        //     Email.send({
+        //         Host: "smtp.elasticemail.com",
+        //         Username: "coderatbyte19@gmail.com",
+        //         Password: "DBB4C8FB69C4F148BD01F4A30F83CD2CEF8B",
+        //         To: "coderatbyte19@gmail.com",
+        //         From: "coderatbyte19@gmail.com",
+        //         Subject: "This is the Result",
+        //         Body: "This is your Personality Score : <br>" + final
+        //     }).then(
+        //         message => alert("Result submitted successfully!")
+        //     );
+        // }
       
         res = [
             { name: 'Linguistic', value: sessionStorage.lit, des: "<br><strong><font style='color: #263e82; font-size: 22px;'>◉ Linguistic</font> </strong><br><br> The people are good at listening, speaking, reading, and writing and possess a good sense of the meaning of words, their rhythm, and sound have strong Linguistic Intelligence. These people are always ahead in traditional classrooms and generally have good oratory skills. <br> <strong>Famous People:</strong> William Shakespear, Shashi Tharoor, JK Rowling, Barack Obama <br><strong> Course:</strong><button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/creative-writing'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Creative Writing</a></button>,<button style='background-color: #c0d4fa; border: 1px solid #15234d; border-radius: 5px; padding: 5px;'> <a href='https://www.demo.curiositypark.com/courses/public-speaking'  target='_blank' rel='noopener noreferrer' style='color: #153082;font-weight: bold;'>Public Speaking</a> </button>" },
@@ -179,27 +183,33 @@
         function custom_compare(a, b) {
             return a.value - b.value;
         }
-      
 
         res.sort(custom_compare).reverse();
 
+        document.getElementById("des").innerHTML = "<br><br><center><strong style='font-size: 24px; padding-top: 20px;'> Intelligences</strong></center><br>" +res[0].des + "<br><br>" + res[1].des + "<br><br>" + res[2].des + "<br><br>"; 
 
+        /*var x;
+      function myFunction(){
+         x = document.getElementById("myEmail").value;
+      } */
+    
+      function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "info@vayamindia.org",
+                Password: "D7D2BE990FC555FE25F5282139623DFF7BCB",
+                To: "ankush.ilfs@gmail.com , info@vayamindia.org",
+                From: "ankush.ilfs@gmail.com",
+                Subject: "MI Test Score of " + n, 
+                Body: "This is your Personality Score : <br>" + n + "<br>" + final
+            }).then(
+                 message => alert("Result submitted successfully!")
+             ); 
+        }
+       // window.onload = sendEmail();
 
-        document.getElementById("des").innerHTML = "<br><center><strong style='font-size: 24px;'>Your Top-3 Intelligences</strong></center><br>" +res[0].des + "<br><br>" + res[1].des + "<br><br>" + res[2].des + "<br><br>"; 
+    </script>       
 
-           
-      // S E N D     E  M A I  L --------------------
-
-         window.onload = sendEmail();
-
-
-       // ---------------------------- 
-
-    </script>
-  <div style="float: left; padding-left: 80px;"><input type="email" id="myEmail" placeholder="Enter your email address" style="height: 35px; border: 2px solid #413ada; padding-left: 10px;" ><button onclick="myFunction()" style="margin-left: 10px; cursor: pointer; border: 2px rgb(211, 160, 160); border-radius: 5px; height: 40px; width: 180px; background-color: #d5f09c;"><h2 style="padding: 8px; ">Send Mail <font style="font-size: 22px; color: chocolate;">➲</font></h2></button>
-  
-  <div style="float: right; padding-left: 400px; padding-right: 80px;"><button style="cursor: pointer; border: 2px rgb(211, 160, 160); border-radius: 5px; height: 40px; width: 180px; background-color: #d5f09c;"><h2 onclick="window.print();" style="padding: 8px; ">Save as Pdf <font style="font-size: 22px; color: chocolate;">➲</font></h2></button></div>
-<br>
 </body>
 
-</html>
+</html> 
